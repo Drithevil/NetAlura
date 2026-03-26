@@ -53,10 +53,27 @@ h1 {
 
 /* ===== Lista de Perfis ===== */
 .profiles {
-    list-style: none; /* Remove os marcadores padrão da lista */
-    display: grid; /* Ativa o layout grid */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colunas responsivas com mínimo 200px */
-    justify-items: center; /* Centraliza os itens horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+ul > li {
+    flex: 1 1 180px;
+    max-width: 220px;
 }
 
 /* ===== Item do Perfil ===== */
@@ -76,12 +93,36 @@ h1 {
 figure {
     margin: 0; /* Remove margens padrão */
     position: relative; /* Posicionamento relativo para elementos filhos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+
+.profile:visited,
+.profile:link {
+    color: var(--netflix-dark-gray); /* Mantém a cor para links visitados e não visitados */
+}
+
+/* ===== Figure ===== */
+figure {
+    margin: 0; /* Remove margens padrão */
+    position: relative; /* Posicionamento relativo para elementos filhos */
 }
 
 /* ===== Imagem do Perfil ===== */
 .profile img {
-    width: 200px; /* Largura fixa de 200px */
-    height: 200px; /* Altura fixa de 200px */
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 8px; /* Bordas arredondadas de 8px */
     object-fit: cover; /* Corta a imagem para preencher o espaço mantendo proporção */
     border: 4px solid transparent; /* Borda transparente de 4px */
@@ -120,6 +161,27 @@ figcaption {
 }
 
 /* ===== Responsividade ===== */
+@media (max-width: 1640px) { /* Para telas menores que 1640px (laptops) */
+    h1 {
+        font-size: 3rem; /* Reduz o tamanho do título */
+        margin-bottom: 70px; /* Reduz a margem inferior */
+    }
+
+    .profiles {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    ul > li {
+        flex: 1 1 160px;
+        max-width: 180px;
+    }
+
+    figcaption {
+        font-size: 1.1rem; /* Tamanho da fonte reduzido */
+    }
+}
+
 @media (max-width: 768px) { /* Para telas menores que 768px (tablets) */
     h1 {
         font-size: 2.5rem; /* Reduz o tamanho do título */
@@ -127,12 +189,13 @@ figcaption {
     }
 
     .profiles {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Colunas menores */
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
-    .profile img {
-        width: 160px; /* Largura reduzida para 160px */
-        height: 160px; /* Altura reduzida para 160px */
+    ul > li {
+        flex: 1 1 140px;
+        max-width: 160px;
     }
 
     figcaption {
@@ -143,17 +206,21 @@ figcaption {
 @media (max-width: 480px) { /* Para telas menores que 480px (celulares) */
     h1 {
         font-size: 2rem; /* Título ainda menor */
+        text-align: center; /* Centraliza o título */
+        justify-items: center; /* Centraliza os itens horizontalmente */
         margin-bottom: 40px; /* Margem ainda menor */
     }
 
     .profiles {
-        gap: 20px; /* Espaçamento reduzido para 20px */
-        grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
     }
 
-    .profile img {
-        width: 120px; /* Largura de 120px para celulares */
-        height: 120px; /* Altura de 120px para celulares */
+    ul > li {
+        flex: 1 1 120px;
+        max-width: 140px;
     }
 
     figcaption {
