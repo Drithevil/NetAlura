@@ -127,7 +127,6 @@ figcaption {
     }
 
     .profiles {
-        gap: 30px; /* Espaçamento de 30px entre perfis */
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Colunas menores */
     }
 
