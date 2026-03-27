@@ -201,6 +201,12 @@ figcaption {
     figcaption {
         font-size: 1.1rem; /* Tamanho da fonte reduzido */
     }
+
+    .profile-button {
+        font-size: 1rem; /* Tamanho da fonte reduzido para laptops */
+        padding: 6px 30px; /* Preenchimento ajustado */
+        margin-top: 80px; /* Margem superior reduzida */
+    }
 }
 
 @media (max-width: 768px) { /* Para telas menores que 768px (tablets) */
@@ -221,6 +227,12 @@ figcaption {
 
     figcaption {
         font-size: 1rem; /* Tamanho da fonte reduzido */
+    }
+
+    .profile-button {
+        font-size: 0.9rem; /* Tamanho da fonte reduzido para tablets */
+        padding: 5px 25px; /* Preenchimento ajustado */
+        margin-top: 60px; /* Margem superior reduzida */
     }
 }
 
@@ -247,6 +259,13 @@ figcaption {
     figcaption {
         font-size: 0.9rem; /* Fonte ainda menor */
         margin-top: 10px; /* Margem superior reduzida */
+    }
+
+    .profile-button {
+        font-size: 0.8rem; /* Tamanho da fonte reduzido para celulares */
+        padding: 4px 20px; /* Preenchimento ajustado */
+        margin-top: 40px; /* Margem superior reduzida */
+        letter-spacing: 1px; /* Espaçamento entre letras reduzido */
     }
 }
 
